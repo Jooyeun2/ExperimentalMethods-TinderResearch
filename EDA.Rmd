@@ -1,0 +1,83 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(kableExtra)
+mdata <- read.csv2(here::here("DataTinder.csv"))
+qq<-nrow(mdata)
+mydata <- mdata %>% filter(Age > 17, Age <27)
+pp<-nrow(mydata)
+```
+
+# Exploratory Data Analysis
+## Tinder Motive Scale
+
+We used the Tinder Motive Scale to better know the motives of the Tinder users od our sample. Thereare eight motives, which are  socializing, social pressure, social approval, entertainment, passing time, relationship seeking, information seeking and sexual experience. After computing the scores for each of them, we selected the highest score to determine the main motive of the Tinder User subset. Information seeking appears to be the strongest motivation (22 participants), followed by social pressure (20) and social approval, the main drive for 10 subjects. The results of Tinder motives scale might differ per country: there are different uses across countries of hookup applications, or more generally social networks (D' Silva & Atay, 2019). For example, our results are different from the results of Barrada and Castro (2020), run on a almost similar sample in Spain (18-26 young adults). Their 1261 university students ranked first pass time, entertainment and information seeking (curiosity). 
+
+```{r , echo = FALSE, warning=FALSE}
+j <- mydata %>% group_by(Group) %>%
+  mutate(SocializingScore= (Socialiazing1+Socialiazing2)/2) %>% 
+  mutate(SocPressureScore= (SocPress1+Socpress2)/2) %>% 
+  mutate(SocApprovalScore= (Socapprov1 + Socapprov2)/2) %>% 
+  mutate(EntertainmentScore= (Entertain2+Entetain1)/2) %>%
+  mutate(PassTimeScore= (PassTime1+PassTime2)/2) %>%    
+  mutate(RelSeekingScore= (RelSeek1+RelSeek2)/2) %>%
+  mutate(InfoSeekingScore= (InfoSeek1+InfoSeek2)/2) %>%
+  mutate(SexualExpScore= (SexualExp1+SexualExp2+SexualExp3)/3) %>%
+  mutate(SESscore= Rosenberg1+Rosenberg2+Rosenberg3+Rosenberg4+Rosenberg5+Rosenberg6+Rosenberg7+Rosenberg8+Rosenberg9+Rosenberg10) %>%
+  mutate(BASscore = (BAS1 + BAS2 + BAS3 + BAS4 + BAS5 + BAS6 + BAS7 + BAS8 + BAS9 + BAS10 + BAS11 + BAS12 + BAS13)) %>%
+  mutate(AIS_Attention = (Attention1+Attention2+Attention3+Attention4)/4) %>%
+  mutate(AIS_Motor = (Motor1+Motor2+Motor3)/3) %>%
+  mutate(AIS_FuturePlan = (FuturePlan1+FuturePlan2+FuturePlan3+FuturePlan4) /4) %>%
+  mutate(AISscore = AIS_Attention+AIS_FuturePlan+AIS_Motor)
+
+df <- j %>% subset(select =c(1:11,66:79))
+View(df)
+df1 <- df %>% filter(Group == "User" | Group == "TUser") %>% subset(select = c(12:19))
+df1$TinderMainScore <- names(df1)[-1][max.col(df1[-1])]
+TinderMainMotive <- df1$TinderMainScore
+df$TinderMainScore <- TinderMainMotive
+
+df1 %>% 
+  group_by(TinderMainScore) %>%
+  summarise(n = n()) %>%
+  ggplot(aes(x= reorder(TinderMainScore, -n) ,y= n, fill= TinderMainScore)) +
+  geom_bar(stat="identity",alpha=0.8) +
+  coord_flip() +
+  ggtitle("Tinder users' computed main motivations") +
+  xlab("Number of users") +
+  ylab("First motivation") +
+  geom_text(aes(label = n), size = 5, hjust = 3, vjust = 0, position = "stack")
+```
+## Self-esteem, body acceptance and impulsiveness Scales
+
+We compute now the  scores for self-esteem, body acceptance and impulsiveness. Self-esteem score ranges between 0 and 30 (lowest self-esteem to the greatest level), the body acceptance scale ranges between 0 and 52 and the impulsiveness scale from 0 to 9. The table \@ref(tab:scores) summarizes the mean scores for each subgroup, the control groups on the left hand side and the participants who received the manipulatation treatment on the right hand side. 
+
+The score for both control groups have higher scores for manipulated measures: self-esteem and body acceptance. The Non-Users control group has an average of 16.8 in self-esteem score, slightly higher than the Tinder users' one : 16.1 (+4.3%). Remind that we expected a higher results for non-users. The self-esteem score drops by 2.4% when the non-users experimental group receives negative feedbacks during the survey completion, and by 11.2 % when the feedbacks are sent to Tinder users. The variation in self-esteem score after treatment is greater for Tinder users, what might partially confirm our second hypothesis.
+
+The body acceptance scores are again higher for control groups: Tinder users average score is 28.1 and Non-Users 28.0. Those scores drops by respectively 10.3% and 13.9% after treatments. Here, the score variation is greater for Non-Users, which infirms our second hypothesis. In addition, there is almost no difference in scores for both control group, infringing our first assumption.
+
+Impulsivity is not manipulated during this experience, it has been proved as a consistent feature for describing Tinder users, it serves here only for modeling matters. However, it is interesting to observe that the most "impulsive" participants belongs to Non-Users groups, in spite of the shortest survey they did: they filles in fiacts only three pages whereas Tinder users answered the additional and hidden Tinder Motive Scale.
+
+
+```{r scores, echo = FALSE, warning=FALSE}
+ses_score <- df %>% 
+  mutate(N = n()) %>%
+  summarize(SelfEsteemScore = sum(SESscore)/N) %>% unique() 
+ 
+mydata
+bas_score <- df %>% 
+  mutate(N = n()) %>%
+  summarize(BASScore = sum(BASscore)/N) %>% unique() 
+
+ais_score <- df %>% 
+  mutate(N = n()) %>%
+  summarize(AISScore= sum(AISscore)/N) %>% unique()
+
+scores <- left_join(ses_score,bas_score)
+scores <- left_join(scores, ais_score)
+scores <- scores[c(1, 2, 4, 3),]
+scores %>% t() %>% kable() %>% kable_styling()
+
+```
+

@@ -1,0 +1,108 @@
+---
+title: "Introduction"
+author: "Eugénie Mathieu"
+date: "26 12 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r , include=FALSE, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+library(tidyverse)
+library(kableExtra)
+```
+
+# Introduction
+
+With 57 millions of Tinder users worldwide, the dating app Tinder is a former trend and nowadays a robust daily service mostly used by young adults. An extensive scientific litterature investigate Tinder an its uses. Typical dating apps, an here Tinder, rely on objectification theory (Strubel and Petrie, 2017), which supports that Tinder represents a contemporary medium for appearance pressures and its use is associated with a variety of negative perceptions about body and self and with increases in individuals’ likelihood to internalize appearance ideals and make comparisons to others. Path analysis showed that self-esteem mediated the effect of social media addiction on satisfaction with life (Hawi and Samaha, 2016). Self-esteem is defined by a total of the individual's thoughts and feelings with reference to himself as an object (Rosenberg, 1965). Self-esteem enhancement motivation to use Tinder consistently showed an important role in the development and maintenance of problematic Tinder use compared to the effects of personality traits Personality has a minor role in behavioral addictions. However, self-determination theory-based need frustrations are more relevant background variables of problematic online behaviors (Orosz et al., 2018) Moreover, impulsive people may be drawn to dating apps due to the speed with which they can rate people. Impulsiveness has been linked to a variety of risky behaviors (Stanford, et al., 1996) and may be connected to both using the app extensively and quickly meeting people one meets on dating apps.The research conveys a lot of hypothesis and directions to take fo further investigations.
+
+
+Conversations and animated debated are created by experiences via this application at the University of Lausanne and Tinder announced during the second quarter that the pandemic has increased the number of active users. In troubled times as we have known in 2020, it is interesting to investigate the current use of Tinder among 18-26 years old young adults. This experiment is an investigation on self-perception of Tinder users, more precisely what their scores of body acceptance, self-esteem and impulsiveness are and what is the magnitude of change of those scores when we manipulate their self-perception. The measures of those traits are supported by the Rosenberg's Self-Esteem Scale (Winch and Rosenberg, 1965), the Body Acceptance Scale (Avalos, Tylka and Wood-Barcalow, 2005) and the Abbreviated Impulsiveness Scale (Coutlee, Politzer, Hoyle and Huettel, 2014), short surved-based tests in order to limit the overall experiment time. By doing this experiment, the present work aims to obtain cosistent results with respect to the underlying litterature, while better understand the user profiles of the sample and their self-esteem robustness to anegative manipulation. As start hypothesis, we consider here that the Tinder users' scores of self-esteem, body acceptance and impulsivity would be significantly different from non users. We expect to have lower scores in the two first measures and a higher impulsivitiy score. As we expect lower self-esteem score in the Tinder users subset, we  as well expect a high variation of self-esteem when externally manipulated, what would reflect an inconstant image of himself weaken by a lower self-esteem.
+
+The survey-based control Group posttest-only designed experiment is run as follow: a participant is categorized as Tinder users or non User to answer the Tinder Motivation Scale, the Rosenberg S-ES, the BAS ans the AIS during a computer-based test. Non-Users would be the referential for the scores (control group). The Tinder Users would be randomly allocated to the treatments consisting in negative feedbacks sent during the Rosenberg's Scale and an anchoring negative article on self-body image and its cruciality in the pre-dating mindset. 
+
+
+# Experimental method and sampling
+
+##Experimental design
+
+The present survey-based experiment is created on the Questback platform (licensed), which is an advanced tool for professional surveys as much as academical computer-based experiments. A license was bought. Five pages or questions are displayed: a first page for socio-demographic data collection, after comes the Tinder Motive Scale (TMS), the Rosenberg Self-Esteem Scale (S-ES), the Body Acceptance Scale (BAS) and the Abbreviated Impulsiviness Scale (AIS).
+
+The experiment is run with two control groups* and two experimental groups to have observation on both Tinder Users and Non-Users. Tinder users, which are catergorized as such if they have a Tinder account and use it more than once a month. Non-Users have thus either a non-active account or no account at all. Both Users and Non-Users particpants are randomly allocated to the treatment. It consists in negative feedback during the completion of the S-ES and an negative anchor before the BAS. Negative feedbacks are articifical comparisons with the other participants, aiming to informs on the lower quality performance of the manipulated participant so as to perturbate him. The S-ES are expected to be affected by the treatment, whose measure would outline a greater variation in score than for the control group. For the second treatment, the article on body acceptance, conveys judgements on aesthetics, corpulence, beauty and flaws. Both treatments are based on usual experimental manipulations. Nevertheless, the effects of manipulation by bogus feedbacks is disputed, but it is enough used that to remain an easy option for manipulating self-esteem. For body acceptance score, we use an anchor with the article.
+
+The data collected would help to verify the 1rst hypothesis: a significant difference in scores, and to compare the variation of those scores after treatments.
+
+* `The initial experimental design was adapted as soon as December 18th to find Non-Users so as to participate to the treatment, in order to have a comparison point for the score variation.`
+
+## Sample
+
+The sample was gathered by a non-probabilistic process. The advertisement of the survey consists in Facebook posts and to personnal invitation on Whatsapp (friends and acuaintances). Participants relayed the link to the survey without knowing until what extent it has worked, so we prefer here to speak about convenience sampling rather than snowball sampling.
+
+
+```{r load data and cleaning,echo=FALSE,warning=FALSE}
+
+mdata <- read.csv2(here::here("DataTinder.csv"))
+qq<-nrow(mdata)
+mydata <- mdata %>% filter(Age > 17, Age <27)
+pp<-nrow(mydata)
+
+```
+
+ Initially composed by `r qq` participants, after cleaning to remove participant not in the target age, the resulting sample counts `r pp` subjects, distributed as the \@ref(tab:grouptable) shows.
+ 
+```{r grouptable, fig.cap="Participants frequency in groups",echo=FALSE,warning=FALSE}
+mydata %>%
+  group_by(Group) %>%
+  summarize(n = n()) %>%
+kable() %>% kable_styling()
+
+```
+To better see the distribution of the age we use the  \@ref(fig:age-per-group-plot) figure. The age is less well distributed for the experimental group of Non-User, as it might be expected since this group was created at a late stage of the experiment. It is less representative of the main sample, if we consider the the Non-Users control group as a realistic caption of the population of Tinder Non-Users.
+
+```{r age-per-group-plot, fig.cap="Age per group plot",echo=FALSE,warning=FALSE}
+mydata %>%
+  group_by(Age, Group) %>%
+  summarize(n = n()) %>%
+  ggplot(aes(x=Age,y= n,fill = Group)) + 
+  geom_bar(stat="identity",alpha=0.8) +
+  facet_wrap(~ Group) + 
+  coord_flip() +
+  ggtitle("Subsets of the sample") +
+  xlab("Type of participants") +
+  ylab("Number per type") +
+   geom_text(aes(label = n), size = 3, hjust = 1, vjust = 0, position = "stack")
+```
+
+Our panel is not homogeneously composed by students, but as well by part-timers, fixed employees and three job-seekers ( \@ref(tab:kable-number-socialstatus) ).
+
+```{r kable-number-socialstatus,echo=FALSE,warning=FALSE }
+mydata %>%
+  group_by(SocialStatus) %>%
+  summarize(n = n()) %>%
+  kable() %>% kable_styling()
+```
+
+Our sample is composed by 70 single participants and 54 participants in a relationship (43.5%). As present plot \@ref(fig:relationship-plot) plot, Non-Users are composed essentially by participants engaged in a relationship or single. We note that they are more inclined to have a traditionnal approach to relationship (binary): either being in a relatioship where having extra sexual relationships is forbidden or being single. For Tinder Users, the relationship types are more diversified: there is almost twice more of open relationships than closed ones, 16 people have a punctual sex plans and a majority is single (32 people). Statistics on Tinder informs that the worldwide Tinder users population composed by 54% of single users and 46% in a relationship (Smith, 2020). Our subset is composed by 26.5% participants in a relationship and 73.5% are single.
+
+`Be aware that the below figure present in an inverse order the control and experimental groups of Tinder Users, in comparison to the Non Users`.
+
+```{r relationship-plot, fig.cap= "relationship-plot", echo=FALSE,warning=FALSE}
+mydata %>%
+  group_by(Relationship, Group) %>%
+  summarize(n = n()) %>%
+  ggplot(aes(x=Relationship,y= n,fill = Group)) + 
+  geom_bar(stat="identity",alpha=0.8) +
+  facet_wrap(Group~.) + 
+  coord_flip() +
+  ggtitle("Subsets of the sample") +
+  xlab("Type of participants") +
+  ylab("Number per type") +
+   geom_text(aes(label = n), size = 3, hjust = 1, vjust = 0, position = "stack")
+```
+
+
+
+
+
