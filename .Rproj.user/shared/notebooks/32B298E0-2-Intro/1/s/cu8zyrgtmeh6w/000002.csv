@@ -1,0 +1,6 @@
+"0","mydata %>%"
+"0","  group_by(SocialStatus) %>%"
+"0","  summarize(n = n()) %>%"
+"0","  kable() %>% kable_styling()"
+"2","`summarise()` ungrouping output (override with `.groups` argument)
+"

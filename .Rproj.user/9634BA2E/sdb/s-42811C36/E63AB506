@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "bookdown::html_document2: default\nbookdown::gitbook: default\nbookdown::pdf_book:\n  includes:\n    in_header: preamble.tex\n  citation_package: biblatex\nbookdown::epub_book: default\n",
+    "created" : 1609627514316.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2205397151",
+    "id" : "E63AB506",
+    "lastKnownWriteTime" : 1608184362,
+    "last_content_update" : 1608184362,
+    "path" : "~/Desktop/UNIL S3/Experimental Methods/ExperimentalMethods-TinderResearch/_output.yml",
+    "project_path" : "_output.yml",
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

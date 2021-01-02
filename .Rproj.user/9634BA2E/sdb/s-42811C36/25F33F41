@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "book_filename: \"Experimental Methods - Manipulation of self-esteem and body acceptance among 18y-26 Tinder users\"\nlanguage:\n  ui:\n    chapter_name: \"Chapter \"\ndelete_merged_file: true\nbefore_chapter_script: \"scripts/setup.R\"\n\nrmd_files: [\n \"1-Index.Rmd\",\n \"2-Intro.Rmd\",\n \"3-EDA.Rmd\",\n \"4-Modeling.Rmd\",\n \"5-LimitationsConclusion.Rmd\",\n \"6-Bibliography.Rmd\"\n]",
+    "created" : 1609627512466.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2857684942",
+    "id" : "25F33F41",
+    "lastKnownWriteTime" : 1609337735,
+    "last_content_update" : 1609337735,
+    "path" : "~/Desktop/UNIL S3/Experimental Methods/ExperimentalMethods-TinderResearch/_bookdown.yml",
+    "project_path" : "_bookdown.yml",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

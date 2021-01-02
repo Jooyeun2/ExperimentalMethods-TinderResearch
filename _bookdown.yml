@@ -1,0 +1,15 @@
+book_filename: "Experimental Methods - Manipulation of self-esteem and body acceptance among 18y-26 Tinder users"
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true
+before_chapter_script: "scripts/setup.R"
+
+rmd_files: [
+ "1-Index.Rmd",
+ "2-Intro.Rmd",
+ "3-EDA.Rmd",
+ "4-Modeling.Rmd",
+ "5-LimitationsConclusion.Rmd",
+ "6-Bibliography.Rmd"
+]

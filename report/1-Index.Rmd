@@ -1,0 +1,16 @@
+--- 
+title: "Experimental Methods - Manipulation of self-esteem and body acceptance among 18y-26 Tinder users"
+author: "Eugénie Mathieu"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+site: bookdown::bookdown_site
+output: bookdown::html_document2
+documentclass: book
+bibliography: [packages.bib]
+biblio-style: apalike
+link-citations: yes
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+

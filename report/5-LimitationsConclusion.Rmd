@@ -1,0 +1,22 @@
+# Limitations
+
+This experiment has a certain number of limitations. Limitations of experiments occuring at manipulating values are multiple, especially when it comes to survey-based experiments. The main biases that researchers face are well known: biases in participant responses (response bias, order effects, boredom effect, etc.), in the design of the experiment (is this really the right way to test what we would like to test?), in sampling (problem of representativeness, which will limit generalization), in analysis (do we answer the research question in a comprehensive way and try to discover potential hidden trends). These problems encountered can be rectified in the course of experiments, but willanyhow necessarily affect the results. The following synoptic list points out some of the weaknesses of this experiment:
+
+* *Web-based Data Collection*: Collecting data remotely without being able to meet the participants dematerializes the interest and seriousness of the experiment as much as the information given to the participants. There is a lack of control over the conditions under which the participants completed the questionnaire. Also the completion of online studies can be biased by the subjectivity of the participants, who will not want to answer the truth or will give their own truth. To reduce this risk in the Tinder Motive Scale, I presented the questionnaire clearly, with a positive and funny tone as suggested (XXXXXXXX Humor and Information Study), and closing with "Don't be shy", to explicitly put my foot in it. However, it is impossible to quantify the effect of this kind of bias in such a small-scale study.
+
+* *Sampling methodology* : The sample is non-probabilistic, which a suboptimal method already implies in order to constitute a representative panel of the population under study: young people aged 18-26. Sampling convenience has an excellent effort/recruitment ratio, the disadvantage being that it allows trends to be sketched without being able to make them generalizable. The experimental group for Non-Users was created lately and at this stage non-Tinder participants were systematically allocated to this group: the process was not randomized. Also, the proportion of control and experimental groups are not the same and we run the risk of obtaining results biased by extreme values not balanced by a sufficient sample size.
+
+* *Experimental design*: 
+
+  + Survey-based posttest-only design: This form is the simplest way to conduct an online experience and was well suited for the completion of different questionnaires to obtain self-esteem, body acceptance and impulsiveness scores. However, a pre-test post-test design would have avoided control groups and forgotten to create them for non-users. In this case, it would have been necessary to revise the form of the survey-based experiment in order to evaluate twice the scores obtained for these three variables.
+  
+  + Manipulation: Bogus feedback is a method that is disputed in the experimental field. The effects are not proven. However, we were able to observe sufficient variation to suggest that this manipulation worked on our experimental group participants. For anchoring, the choice of method could also be improved. Impulsivity has not been tested: an improvement would be to give it a less descriptive role in order to more firmly justify its existence among the variables under study.
+
+
+
+# Conclusion 
+
+
+
+  
+  

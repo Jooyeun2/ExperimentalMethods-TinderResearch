@@ -1,0 +1,7 @@
+"0","step(mymod,
+     direction = c(""both"")))
+"
+"2","Error: unexpected ')' in:
+""step(mymod,
+     direction = c(""both"")))""
+"

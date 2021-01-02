@@ -1,9 +1,0 @@
-`r if (knitr:::is_html_output()) '
-# References {-}
-'`
-
-Smith, C., 2020. [online] Expandedramblings.com. Available at: <https://expandedramblings.com/index.php/tinder-statistics/> [Accessed 28 December 2020].
-
- Barrada, J. and Castro, Á., 2020. Tinder Users: Sociodemographic, Psychological, and Psychosexual Characteristics. International Journal of Environmental Research and Public Health, 17(21), p.8047.
- 
- D' Silva, M. and Atay, A., 2019. Mediated Intercultural Communication In A Digital Age. [S.l.]: Routledge Research in Communication Studies, p.Chapter 6.

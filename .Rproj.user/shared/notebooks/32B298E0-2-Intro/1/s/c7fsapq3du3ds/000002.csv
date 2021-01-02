@@ -1,0 +1,4 @@
+"0","mdata <- read.csv2(here::here(""DataTinder.csv""))"
+"0","qq<-nrow(mdata)"
+"0","mydata <- mdata %>% filter(Age > 17, Age <27)"
+"0","pp<-nrow(mydata)"

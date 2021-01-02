@@ -1,0 +1,29 @@
+`r if (knitr:::is_html_output()) '
+# References {-}
+'`
+
+Smith, C., 2020. [online] Expandedramblings.com. Available at: <https://expandedramblings.com/index.php/tinder-statistics/> [Accessed 28 December 2020].
+
+Barrada, J. and Castro, Á., 2020. Tinder Users: Sociodemographic, Psychological, and Psychosexual Characteristics. International Journal of Environmental Research and Public Health, 17(21), p.8047.
+ 
+D' Silva, M. and Atay, A., 2019. Mediated Intercultural Communication In A Digital Age. [S.l.]: Routledge Research in Communication Studies, Chapter 6.
+ 
+Wenting Mu and Fan Wu (December 7th 2020). Blossoming for Whom? Social Approval and Body Image [Online First], IntechOpen, DOI: 10.5772/intechopen.94503. Available from: https://www.intechopen.com/online-first/blossoming-for-whom-social-approval-and-body-image
+
+Malhotra, N. K., & Birks, D. F. (2007). Marketing Research: An Applied Approach (3rd ed.). Upper Saddle River, NJ: Pearson Prentice Hall.
+
+QuestBack AG (2012). EFS Survey Manual (9th ed.).
+
+Deci, E. L., & Ryan, R. M. (2002). Handbook of self-determination research. Rochester, NY: University of Rochester Press.
+
+Rosenberg, M. (1965). Society and the adolescent self-image. Princeton, NJ: Princeton University Press.
+
+
+Lizzio, A., Wilson, K. L., Gilchrist, J., & Gallois C. (2003), The role of gender in the construction and evaluation of feedback effectiveness. Management Communication Quarterly (16.3), 341-379.
+
+
+Francis, L., 2019. Tinder Is Full Of Teenagers. [online] Fatherly. Available at: <https://www.fatherly.com/love-money/tinder-dating-teens-use-app-for-sex-relationships/> [Accessed 30 December 2020].
+
+Cheung, H., Lai, V. and Wu, K., 2015. Should university students be engaged in romantic relationships?. Advances in Sociology Research, [online] 17, pp.83-96. Available at: <https://scholars.cityu.edu.hk/en/publications/publication(6a4923d0-e44a-4581-9a76-313938144ca9).html>.
+
+Hewitt, John P. (2009). Oxford Handbook of Positive Psychology. Oxford University Press. pp. 217–224. ISBN 978-0-19-518724-3.

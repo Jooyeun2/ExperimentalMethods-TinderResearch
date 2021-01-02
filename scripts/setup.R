@@ -11,11 +11,8 @@ packages <- c(
   "ggrepel", "gghighlight", "patchwork", "maps", # for plotting
   "knitr", "kableExtra", "bookdown", "rmarkdown", # for the report
   "randomForest","janitor","caret","pdftools","rvest","tidytext",
-  "stringr","RColorBrewer","printr","ggplot2","topicmodels","text2vec", "DT","ranger")
+  "stringr","RColorBrewer","printr","ggplot2","topicmodels","text2vec", "DT","ranger", "neuralnet", "Hmisc", "survival","lattice", "bibtext")
 
-
-# automatically create a bib database for R packages
-write_bib(.packages(), here::here("packages.bib"))
 
 ######################################################
 ## The following sets a few option for nice reports ##
@@ -33,23 +30,6 @@ options(
 # ggplot options
 theme_set(theme_light())
 
-# knitr options
-opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE,
-  cache = TRUE,
-  fig.retina = 0.8, # figures are either vectors or 300 dpi diagrams
-  dpi = 300,
-  out.width = "70%",
-  fig.align = "center",
-  fig.width = 6,
-  fig.asp = 0.618,
-  fig.show = "hold",
-  message = FALSE,
-  echo = FALSE,
-  warning = FALSE,
-  cache =TRUE
-)
 
 ######################################################
 ## The following sets a few option for nice reports ##

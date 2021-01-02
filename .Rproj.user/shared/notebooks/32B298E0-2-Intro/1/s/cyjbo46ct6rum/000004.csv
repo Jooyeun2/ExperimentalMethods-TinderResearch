@@ -1,0 +1,13 @@
+"0","mydata %>%"
+"0","  group_by(Relationship, Group) %>%"
+"0","  summarize(n = n()) %>%"
+"0","  ggplot(aes(x=Relationship,y= n,fill = Group)) + "
+"0","  geom_bar(stat=""identity"",alpha=0.8) +"
+"0","  facet_wrap(Group~.) + "
+"0","  coord_flip() +"
+"0","  ggtitle(""Subsets of the sample"") +"
+"0","  xlab(""Type of participants"") +"
+"0","  ylab(""Number per type"") +"
+"0","   geom_text(aes(label = n), size = 3, hjust = 1, vjust = 0, position = ""stack"")"
+"2","`summarise()` regrouping output by 'Relationship' (override with `.groups` argument)
+"
