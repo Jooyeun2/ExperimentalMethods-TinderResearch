@@ -1,5 +1,0 @@
-"0","plot(TinderNonUsers$Group, pred.te3, main = ""Plot of the predictions against the real Non User Groups"", sub = ""Not very convincing neither...!"", ylab = ""Predictions"", xlab = ""Real groups: 1 = CG and 2 = EG"")
-"
-"2","Error in xy.coords(x, y, xlabel, ylabel, log) : 
-  'x' and 'y' lengths differ
-"

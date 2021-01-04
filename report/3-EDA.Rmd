@@ -27,7 +27,17 @@ pval_star <- function (p, cutoffs = c(0.05, 0.01, 0.001)) {
 
 ## Tinder Motive Scale
 
-We used the Tinder Motive Scale to better know the motives of the Tinder users od our sample. Thereare eight motives, which are  socializing, social pressure, social approval, entertainment, passing time, relationship seeking, information seeking and sexual experience. After computing the scores for each of them, we selected the highest score to determine the main motive of the Tinder User subset, displayed by figure \@ref(fig:tinder-main-motives). Information seeking appears to be the strongest motivation (23 participants), followed by social pressure (16) and social approval, the main drive for 11 subjects. The results of Tinder motives scale might differ per country: there are different uses across countries of hookup applications, or more generally social networks (D' Silva & Atay, 2019). For example, our results are different from the results of Barrada and Castro (2020), run on a almost similar sample in Spain (18-26 young adults). Their 1261 university students ranked first pass time, entertainment and information seeking (curiosity). 
+We used the Tinder Motive Scale to better know the motives of the Tinder users of our sample. There are eight motives, which are
+* socializing
+* social pressure
+* social approval
+* entertainment
+* passing time
+* relationship seeking
+* information seeking and 
+* sexual experience. 
+
+After computing the scores for each of them, we selected the highest score to determine the main motive of the Tinder User subset, displayed by figure \@ref(fig:tinder-main-motives). Information seeking appears to be the strongest motivation (23 participants), followed by social pressure (16) and social approval, the main drive for 11 subjects. The results of Tinder motives scale might differ per country: there are different uses across countries of hookup applications, or more generally social networks (D' Silva & Atay, 2019). For example, our results are different from the results of Barrada and Castro (2020), run on a almost similar sample in Spain (18-26 young adults). Their 1261 university students ranked first pass time, entertainment and information seeking (curiosity). 
 
 
 ```{r tinder-main-motives, fig.cap="Tinder users' computed main motivations", echo = FALSE, warning=FALSE}
@@ -90,7 +100,7 @@ df_full %>% filter(Group == "User" | Group == "TUser") %>%
 ```
 
 
-Differences exists in types of relationship among Tinder Users and Non Users. Let's define what signify open relationship and punctual sex. According to the dictionnary, open relationship is defined by one where an established couple has mutually agreed to share a non-monogamous lifestyle. This includes either or both parties having other sexual and/or romantic partners (open relationship | Dictionary.com, 2020). Hookups, here "punctual sex", are defined by any form of intamicy with a member of the prefered sex who is not considered as a significant other (Urban Dictionary: hookup, 2020). 
+Differences exists in types of relationship among Tinder Users and Non Users. Let's define what signify open relationship and punctual sex. According to the dictionnary, open relationship is defined by one where an established couple has mutually agreed to share a non-monogamous lifestyle. This includes either or both parties having other sexual and/or romantic partners (open relationship | Dictionary.com, 2020). Hookups, here named "punctual sex", are defined by any form of intamicy with a member of the prefered sex who is not considered as a significant other (Urban Dictionary: hookup, 2020). 
 As presented by the fingure \@ref(fig:relationship-age), punctual sexual relations is correlated with Tinder uses, as this form of relationship is the second most represented type in the respective subset per age. In addition, open relationships are more present is this same subset. Tinder being a hookup application, it is intuitive to find more types of relationship which can be compared as flings and one-night stands (hookups for single persons open couples).
 
 ```{r relationship-age, fig.cap="The type of relationships per age of participants, by Tinder Users and Non Users", echo = FALSE, warning = FALSE}
@@ -104,7 +114,7 @@ plot1<- df %>% filter(Group == "User" | Group == "TUser") %>%
   theme(axis.text.x = element_text(angle = 90, hjust = 1, size =10)) +
    labs(
      title = "Type of relationship per age among Tinder Users subset",
-     subtitle = "The average service is slighty longer for men",
+     subtitle = "Aging seems to be related to a higher number of possible relationship options",
      y="Types of relationship"
      )
 
@@ -115,7 +125,7 @@ plot1<- df %>% filter(Group == "User" | Group == "TUser") %>%
   theme(axis.text.x = element_text(angle = 90, hjust = 1, size =10)) +
    labs(
      title = "Type of relationship per age among Non Users subset",
-     subtitle = "The average service is slighty longer for men",
+     subtitle = "Hookups as well as open relationships are less frequent",
      y="Types of relationship"
      )
  
@@ -126,7 +136,8 @@ gridExtra::grid.arrange(plot1,plot2)
 
 
 
-## Self-esteem, body acceptance and impulsiveness Scales
+## Self-Esteem Scale Body Acceptance and Impulsiveness Scales
+
 
 We compute now the scores for self-esteem, body acceptance and impulsiveness. Self-esteem score ranges between 0 and 30 (below 15 is a low self-esteem, 15-25 are considered as normal scores, above is high self-esteem), the body acceptance scale ranges between 0 and 52 and the impulsiveness scale from 0 to 9. A nice visual representation of the scores is done via scatter plots, as in figure \@ref(fig:boxplots-per-score). 
 
@@ -164,8 +175,6 @@ pl3 <- df_full %>% group_by(Group) %>%
     )
 gridExtra::grid.arrange(pl1, pl2, pl3)
 ```
-
-
 
 
 The table \@ref(tab:scores) summarizes the scales scores for each subgroup, the control groups on the left hand side and the participants who received the manipulatation treatment on the right hand side. 
@@ -230,9 +239,6 @@ scoresU %>% t() %>% kable() %>% kable_styling()
 
 
 
-
-
-
 # Analysis of the scores
 ## Significance of self-esteem, body acceptance and impulsiveness
 
@@ -244,6 +250,8 @@ For modeling matters, the levels of "Groups" were turned into integers so as to 
   * TNonUser: 2
   * User:     3
   * TUser :   4
+  
+### Self-Esteem
   
 \@ref(tab:significance-self-esteem-combined) The self-esteem scores are not statistically different for the control and experimental groups of non-users of the Tinder application. However, the self-esteem score of the Tinder Users is statistically different at 10%  from the Non-Users whereas Treated Users, our experimental group for Tinder users, is statistically different at 1%. They are satisfactory results, since we might have expected a slight difference between the control group and the experimental group of the subset of Non-Users, but a larger on between Tinder Users and Non Users (our first assumption).
 
@@ -278,9 +286,10 @@ broom::tidy(mymodUserSES) %>%
   )
 ```
 
+### Body Acceptance Scale
 
-\@ref(tab:significance-bodyacceptance-combined) However, the body acceptance score is more mitigated. In facts, this score is not statistically differents between both control groups. It signifies that the body acceptance is quite similar among the participants of the experiments, whether they use the application or not. It does not converge to the results on previous researches, such as XXXX.
-Our reference level being again the Non Users control group, the statistical differences are related to the experimental groups: the less different being the Non User EG at 10%, and the Tinder User experimental group at 1%. The key learning point here is that the variation resulting from the treatments achieve greater changes among Tinder Users than Non-Users. It is consistent with the potential unconstant self-image of the application users, since it was assumed they have a lower self-esteem and thus a potential greater propension to be affected by external manipulations. 
+\@ref(tab:significance-bodyacceptance-combined) However, the body acceptance score is more mitigated. In facts, this score is not statistically differents between both control groups. It signifies that the body acceptance is quite similar among the participants of the experiments, whether they use the application or not. It does not converge to the results on previous researches, such as Hawi and Samaha, in 2016.
+Our reference level being again the Non Users control group, the statistical differences are related to the experimental groups: the less different being the Non User experimental group at 10%, and the Tinder User experimental group at 1%. The key learning point here is that the variation resulting from the treatments achieve greater changes among Tinder Users than Non-Users. It is consistent with our second hypothesis, the potential unconstant self-image of the application users, since it was assumed they have a lower self-esteem and thus a potential greater propension to be affected by external manipulations. 
 
  $$ Group = BASscore + e$$
 
@@ -300,7 +309,9 @@ broom::tidy(mymodUserBAS) %>%
 
 ```
 
-\@ref(tab:significance-impulsiveness-combined) Finally, as previously said, impulsiveness was not manipulated during the experiment. The natural score per group of participants are not enough discriminatory to be relevant: no p-values admit a significance equal or higher than 10%. Being a Tinder Use would reduce the the impulsiveness score slightly.
+### Impulsiveness Scale 
+
+\@ref(tab:significance-impulsiveness-combined) Finally, as previously said, impulsiveness was not manipulated during the experiment. The natural score per group of participants are not enough discriminatory to be relevant: no p-values admit a significance equal or higher than 10%. Being a Tinder User would reduce the the impulsiveness score slightly, but it is not statistically significant.
 
  $$ Group =  AISscore + e$$
 ```{r significance-impulsiveness-combined, echo = FALSE, warning=FALSE, message=FALSE}
@@ -318,9 +329,9 @@ broom::tidy(mymodUserAIS) %>%
 ```
 
 
+## Modeling with SES, BAS and AIS scores
 
-
-## Exploring the significance of the scores among control and experimental groups
+### Exploring the significance of the scores among control and experimental groups
 
 After having analysed the features independently, we now constuct the model with the computed scores of self-esteem, body acceptance and impulsiveness, the TinderMainScore being added for Tinder Users, in order to see if the regression is able to distinguish the experimental groups form the control ones. The model we analyse under this section if the following:
  
@@ -360,11 +371,11 @@ broom::tidy(mymod) %>%
 
 ```
 
-To better see how to improve our current model by keeping only the "good" coefficients, we use the step() function which compute the AIC for the model formed by adding (or removing) step by step the features of our previous model. The results of the the backward and forward methods are below. The results are read as the deviance (error) has to be the lowest and the AIC as well, which is our model selection criteria. Thus, the best model would be composed by only the AISscore. This information does not support our second starting hypothesis.
+To better see how to improve our current model by keeping only the "good" coefficients, we use the step() function which compute the AIC for the model formed by adding (or removing) step by step the features of our previous model. The results of the the backward and forward methods are below. The results are read as the deviance (error) has to be the lowest and the AIC as well, which is our model selection criteria. Thus, the best model would be composed all the features except the AIS score. This information does not support our second starting hypothesis.
 
 ```{r step TU, echo = FALSE, warning=FALSE, message=FALSE}
 
-step(mymod,
+bb <- step(mymod,
      direction = c("both"))
 
 ```
@@ -389,7 +400,7 @@ dd2<-summary.lm(mymod)
 rsq2 <- dd$adj.r.squared
 ```
 
-The table \@ref(tab:kable-TNUsers) confirms the our negative intuition: none of the values are significant, the model does not fit our data, what the Adjusted R-Squared already revealed. The positive correlation of the features would signify that higher are the scores, higher is the chance to belongs to the experimental group. In other words, the experimental should have higher scores than participants not treated, what is not consistent with the Exploratory Data Analysis.
+The table \@ref(tab:kable-TNUsers) confirms our negative intuition: none of the values are significant, the model does not fit our data, what the Adjusted R-Squared already revealed. The positive correlation of the features would signify that higher are the scores, higher is the chance to belongs to the experimental group. In other words, the experimental should have higher scores than participants not treated, what is not consistent with the Exploratory Data Analysis.
 
 ```{r kable-TNUsers, echo = FALSE, warning=FALSE, message=FALSE}
 broom::tidy(mymod2) %>% 
@@ -411,9 +422,9 @@ Age <- as.factor(df_full$Age)
 
 ```
 
-## Using a classification model
+### Classification model for predicting the sample subsets
 
-In addition to quantify the link between our inputs and output, we want to perhaps undercover a qualitative link: the use of a learner. A neural network with two nodes are used to classify our participants, we neglect here the parametrization of decay. The figure \@ref(fig:neural-network1) depicts the computed neural network witht the coefficients. Don't linger over the significance of the coefficient, the use of neural network here is only to verify the accuracy before to have a closer look if this criteria is satisfactory. The accuracy of our neural network is `r acc1`, very low again. 
+In addition to quantify the link between our inputs and output, we want to perhaps undercover a qualitative link: the use of a learner. A neural network with two nodes are used to classify our participants, we neglect here the parametrization of decay. The figure \@ref(fig:neural-network1) depicts the computed neural network with the coefficients. Don't linger over the significance of the coefficients (which would be by the way a harsh tasks since neural network coefficients have a low interpretanility), the use of neural network here is only to verify the accuracy before to having a closer look, if and only if the model is satisfying. The accuracy of our neural network is `r acc1`, very low again and not satisfying. 
 
 ```{r neural-network1,fig.cap="Neural network based on the self-esteem, body acceptance and impulsiveness scores", echo = FALSE, warning=FALSE, message=FALSE}
 
@@ -427,18 +438,18 @@ nn1 <- nnet(Group ~ SESscore + BASscore + AISscore, size=2)
 
 pred1 <- predict(nn1, type="class")
 tab1 <- table(Obs=df_full$Group, Pred=pred1)
-
+acc1 <- sum(diag(tab1))/sum(tab1)
 library(neuralnet)
 fnn1 <- as.formula(paste("Group ~ SESscore + BASscore + AISscore", collapse = " + "))
 nn11 <- neuralnet(fnn1, data= df_full, hidden=2)
-plot(nn11, rep="best")
+plot(nn11, rep="best", main = " First version of a neural network to predict the sample subset", sub= " Group = SESscore + BASscore +AISscore + e")
 
 ```
 
-Since the bove results are again not a help, we decided to included two additional features which might bring useful information to better model the data. In the Exploratory Data Analysis, we observed that the relationship type admits differences among groups, as well as the variable Age. Since it might colinearity between both, and because the age is more reliable and less subject to subjective interpretation, we built our regression as follows:
+Since the above results are again not a help, we decided to included two additional features which might bring useful information to better model the data. In the Exploratory Data Analysis, we observed that the relationship type admits differences among groups, as well as the variable Age. Since it might be colinearity between both, we might select one rather the other. Because Age is more reliable and less subject to subjective interpretation, we built our regression as follows:
 
 $$ Group = SESscore + BASscore +AISscore + Age + e$$
-and the plot is shown below. The accuracy is far more satisfying: we reach `r acc2`! It is too certainly to high this time no to include any bias. To investigate further, we would run a regression including both Age and relationship and use the step method in order to see if a better model could be build and to determine what are the useful features.
+and the plot is shown below. The accuracy is far more satisfying: we reach `r acc2`! It is certainly too high this time not to include any bias. To investigate further, we would run a regression including both Age and Relationship and adding TinderMainScore, before using the step method in order to see if a better model could be built and reduce the bias.
 
 ```{r neural-network2,fig.cap="Neural network based on the self-esteem, body acceptance and impulsiveness scores", echo = FALSE, warning=FALSE, message=FALSE}
 
@@ -456,7 +467,6 @@ pred2 <- predict(nn2, type="class")
 tab2 <- table(Obs=df_full$Group, Pred=pred2)
 
 acc2 <- sum(diag(tab2))/sum(tab2)
-(acc3 <- sum(diag(tab3))/sum(tab3))
 
 library(neuralnet)
 fnn2 <- as.formula(paste("Group ~ SESscore + BASscore + AISscore + Age", collapse = " + "))
@@ -467,17 +477,12 @@ plot(nn22, rep="best")
 
 
 
-
-
-
 ```{r model-tent, echo = FALSE, warning=FALSE, message=FALSE}
-
+df_full <- df_full %>% filter(TinderMainScore != "Socializing")
 df_full$Group <- as.numeric(as.character(df_full$Group))
 
-mymod3 <- glm(Group ~ SESscore + BASscore + AISscore + Age + Relationship, family = "gaussian", data = df_full)
-pred.te3 <-  predict(mymod3, df_full)
-min3<- min(pred.te3)
-max3<- max(pred.te3)
+no.na.data <- na.omit(df_full)
+mymod3 <- glm(Group ~ SESscore + BASscore + AISscore + Age + Relationship + TinderMainScore, family = "gaussian", data = no.na.data)
 
 dd3<-summary.lm(mymod3)
 rsq3 <- dd3$adj.r.squared
@@ -494,6 +499,18 @@ broom::tidy(mymod3) %>%
 
 ```
 
-The regression is not satisfactory. The table \@ref(tab:model-tent) underlines again the significance of the self-esteem score, but the other features do not a statistical significance to model the kind of participants who belongs to experimental or control groups. The values are ranging from `r min3` to `r max3` and the Adjusted R-Squared equals `r rsq3`. This deceiving attempt points out the bias shown in the previous neural network and the low quality of our data to satisfy our aim to model Tinder Users participants by their self-esteem, body acceptance AND impulsiveness scores, if not some other features to strenghten modeling ability.
+Self-esteem, body acceptance and Sexual experience as Tinder Motive are three significant features at 5%.  The Adjusted R-Squared equals `r rsq3`. In spite of a satisfactory AIC (56.1), The regression has no power for explaining the variance. The table \@ref(tab:model-tent) underlines again the significance of the self-esteem score, but the other features do not have any statistical significance to model the group of participants. This deceiving attempt points out the bias shown in the previous neural network (the very high accuracy), and on the second hand the low quality of our data to satisfy our aim to model Tinder Users participants by their self-esteem, body acceptance AND impulsiveness scores, if not some other features to strenghten modeling ability. We might question the data collection process, the sampling methodology and the experimental design.
+
+The step method proposes an improvement. Age and impulsiveness are not selected. The better model has a lower AIC (52.1):
+ $$Group =  SESscore + BASscore + Relationship + TinderMainScore + e$$
+```{r model-tent2, echo = FALSE, warning=FALSE}
+
+
+dd <- step(mymod3,
+     direction = c("both"))
+
+```
+
+The regression is not satisfactory. The table \@ref(tab:model-tent) underlines again the significance of the self-esteem score, but the other features do not have any statistical significance to model the group of participants. The Adjusted R-Squared equals `r rsq3`. This deceiving attempt points out the bias shown in the previous neural network (the very high accuracy), and on the second hand the low quality of our data to satisfy our aim to to have a well-built moodel for Tinder Users participants based on their self-esteem, body acceptance AND impulsiveness scores, if not some other features to strenghten modeling ability. We might question the sampling methodology and the experimental design.
 
 

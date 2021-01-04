@@ -1,0 +1,7 @@
+"0","TinderNonUsers <- rbind2(TNonUser,NonUser, deparse.level = 0)"
+"0","TinderNonUsers$Group <- as.numeric(as.character(TinderNonUsers$Group))"
+"0","mymod2 <- glm(Group ~ SESscore + BASscore + AISscore, family = ""Gamma"", data = TinderNonUsers)"
+"0","pred.te2 <-  predict(mymod2, TinderNonUsers)"
+"0","min<- min(pred.te2)"
+"0","max<- max(pred.te2)"
+"0","plot(TinderNonUsers$Group, pred.te2, main = ""Plot of the predictions against the real Non User Groups"", sub = ""Not very convincing neither...!"", ylab = ""Predictions"", xlab = ""Real groups: 1 = CG and 2 = EG"")"

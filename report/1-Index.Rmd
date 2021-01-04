@@ -1,16 +1,19 @@
 --- 
-title: "Experimental Methods - Manipulation of self-esteem and body acceptance among 18y-26 Tinder users"
+title: "Experimental Methods - Manipulation of self-esteem and body acceptance among 18-26y Tinder users"
 author: "Eugénie Mathieu"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::html_document2
 documentclass: book
-bibliography: [packages.bib]
 biblio-style: apalike
-link-citations: yes
 ---
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
 ```
 
+
+# Abstract
+
+The present experiment is a comparative study of Tinder Users and Non Tinder Users in terms of self-esteem, body acceptance and impulsiveness. The true experimental methods were designed to impact self-esteem and body acceptance, so as to evaluate the scores among control groups and the degree of magnitude of the varaition in self-esteem and body acceptance in the experimental groups. The aim of this study is to obtain consistent results with previous research and to demonstrate that the self-esteem and body acceptance of Tinder Users, assumed to be lower, is as well less robust than Non-Users' ones. The experience was an online survey-based questionnaire inluding the Rosenberg's Self-Esteem Scale, Body Acceptance Scale and the Abbreviated Impulsiveness Scale and a hidden page for Tinder Users: the Tinder Motive Scale. Feedbacks were sent to experimental groups during the Rosenberg Self-Esteem Scale and an anchoring article was displayed before the Body Acceptance Scale page in order both to lower the scores. The results points out that manipulations impacted experimental groups in different ways but significantly. The Modeling part confirms the significant difference in self-esteem and body acceptance scores among groups: those both scores are the most important features to model the sample.However, the models built, more precisely the neural networks, are not satisfactoriy enough to be used for categorizing participants. The experiment is partially satisfaying and improvements should be done on the experimental design.

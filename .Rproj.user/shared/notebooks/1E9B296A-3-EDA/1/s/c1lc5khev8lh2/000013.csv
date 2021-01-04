@@ -1,0 +1,5 @@
+"0","TinderUsers <- TinderUsers %>% filter(TinderMainScore != ""SocializingScore"")"
+"0","TinderUsers$Group <- as.numeric(as.character(TinderUsers$Group)) "
+"0","mymod <- glm(Group ~ SESscore + BASscore + AISscore + TinderMainScore, family = ""gaussian"", data = TinderUsers)"
+"0","pred.te <-  predict(mymod, TinderUsers)"
+"0","plot(TinderUsers$Group, pred.te, main = ""Plot of the predictions against the real Tinder User Groups"", sub = ""Not very convincing..."", ylab = ""Predictions"", xlab = ""Real groups: 3 = CG and 4 = EG"")"

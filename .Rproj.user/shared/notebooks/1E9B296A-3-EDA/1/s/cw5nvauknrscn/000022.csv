@@ -1,0 +1,44 @@
+"0","library(nnet)"
+"0","SESscore <- as.factor(df_full$SESscore) # make our features as factors"
+"0","AISscore <- as.factor(df_full$AISscore)"
+"0","BASscore <- as.factor(df_full$BASscore)"
+"0","Group <- as.factor(df_full$Group)"
+"0","nn1 <- nnet(Group ~ SESscore + BASscore + AISscore, size=2)"
+"1","# weights: "
+"1"," "
+"1","172"
+"1","
+"
+"1","initial  value 164.894632 
+"
+"1","iter  10 value 115.033512
+"
+"1","iter  20 value 53.546515
+"
+"1","iter  30 value 36.927437
+"
+"1","iter  40 value 30.813333
+"
+"1","iter  50 value 29.864486
+"
+"1","iter  60 value 29.637065
+"
+"1","iter  70 value 29.501367
+"
+"1","iter  80 value 29.448374
+"
+"1","iter  90 value 29.409839
+"
+"1","iter 100 value 29.365045
+"
+"1","final  value 29.365045 
+"
+"1","stopped after 100 iterations
+"
+"0","pred1 <- predict(nn1, type=""class"")"
+"0","tab1 <- table(Obs=df_full$Group, Pred=pred1)"
+"0","acc1 <- sum(diag(tab1))/sum(tab1)"
+"0","library(neuralnet)"
+"0","fnn1 <- as.formula(paste(""Group ~ SESscore + BASscore + AISscore"", collapse = "" + ""))"
+"0","nn11 <- neuralnet(fnn1, data= df_full, hidden=2)"
+"0","plot(nn11, rep=""best"", main = "" First version of a neural network to predict the sample subset"", sub= "" Group = SESscore + BASscore +AISscore + e"")"

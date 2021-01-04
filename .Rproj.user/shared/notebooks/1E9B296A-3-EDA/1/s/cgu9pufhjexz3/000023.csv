@@ -1,0 +1,2 @@
+"0","dd2<-summary.lm(mymod)"
+"0","rsq2 <- dd$adj.r.squared"
