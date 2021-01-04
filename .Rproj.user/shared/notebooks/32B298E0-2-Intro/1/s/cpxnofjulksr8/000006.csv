@@ -1,0 +1,14 @@
+"0","mydata %>%
+  group_by(Age, Group) %>%
+  summarize(n = n()) %>%
+  ggplot(aes(x=Age,y= n,fill = Group)) + 
+  geom_bar(stat=""identity"",alpha=0.8) +
+  facet_wrap(~ Group) + 
+  coord_flip() +
+  ggtitle(""Number of participants per Age and per sample subset"") +
+  xlab(""Age of participants"") +
+  ylab(""Number per type"") +
+   geom_text(aes(label = n), size = 3, hjust = 1, vjust = 0, position = ""stack"")
+"
+"2","`summarise()` regrouping output by 'Age' (override with `.groups` argument)
+"
